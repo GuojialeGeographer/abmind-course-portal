@@ -61,9 +61,9 @@ npm run build:static
 ### 核心贡献者
 
 - **[Xin Lin](https://github.com/peter-kinger)** - Mesa 维护者，中国地质大学硕士生
-- **[Jiale Guo](https://guojialegeographer.github.io)** - 城市建模专家，米兰理工大学硕士生
+- **[Jiale Guo](https://guojialegeographer.github.io)** - 社区运营，米兰理工大学硕士生
 - **[Bo Hu](https://hubo-home.com)** - 社区运营，南京大学博士生
-- **[Adam Zhou](https://github.com/AdamZh0u)** - 空间建模专家，伦敦大学学院博士生
+- **[Adam Zhou](https://github.com/AdamZh0u)** - Mesa 维护者，伦敦大学学院博士生
 
 ## 📖 课程内容
 
