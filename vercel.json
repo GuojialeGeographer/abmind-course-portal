@@ -2,7 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "out",
   "installCommand": "npm ci",
-  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
@@ -34,5 +33,7 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
