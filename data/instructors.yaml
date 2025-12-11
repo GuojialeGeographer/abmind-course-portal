@@ -1,0 +1,61 @@
+instructors:
+  - id: 'shuang-song'
+    name: 'Shuang Song'
+    title: '博士后研究员'
+    affiliation: '马克思·普朗克研究所（地球人类学所）'
+    bio: '从事社会-生态系统建模研究，有超6年的开发与开源社区经验，开发了多主体模型框架ABSESpy，领导PaperBell团队，担任DHTech软件审稿人。在马普所IMPRS教学团队担任"模型思维"课程模块的拓展教员。发表论文超20余篇（H-Index = 12）。'
+    expertise: ['Agent-Based Modeling', 'Social-Ecological Systems', 'ABSESpy', 'Complex Systems']
+    links:
+      homepage: 'https://www.gea.mpg.de/person/137764'
+      github: 'https://github.com/SongshGeoLab'
+      paperbell: 'https://paperbell.cn/'
+
+  - id: 'xin-lin'
+    name: 'Xin Lin'
+    title: '硕士研究生'
+    affiliation: '中国地质大学（武汉）'
+    bio: '从事社会-气候模型与强化学习耦合的相关方向研究。作为开源贡献者参与了多主体建模软件包Mesa的代码维护。作为GISphere机构成员，参与GIS-info-LLM项目。曾荣获优秀毕业生、孙越崎奖等称号。'
+    expertise: ['Mesa Framework', 'Social-Climate Modeling', 'Reinforcement Learning', 'GIS']
+    links:
+      email: 'peter.org3s@gmail.com'
+      github: 'https://github.com/peter-kinger'
+
+  - id: 'jiale-guo'
+    name: 'Jiale Guo'
+    title: '硕士研究生'
+    affiliation: '米兰理工大学土木与环境工程系'
+    bio: '研究方向为GeoAI、时空数据智能分析建模与模拟、地理计算与可持续城市建模。作为城市感知计算、GISphere、ABMind等机构成员，参与了GIS公益学术讲座（GISChat）的组织和运营工作。曾获安徽省优秀毕业生、优秀共产党员等称号。'
+    expertise: ['GeoAI', 'Urban Modeling', 'Spatial Analysis', 'Sustainable Cities']
+    links:
+      email: 'jiale.guo@mail.polimi.it'
+      homepage: 'https://guojialegeographer.github.io/index.html'
+      github: 'https://github.com/GuojialeGeographer'
+
+  - id: 'bo-hu'
+    name: 'Bo Hu'
+    title: '博士研究生'
+    affiliation: '南京大学社会学院'
+    bio: '研究方向为环境社会学与时间社会学。关注社会模拟与气候变化问题，气候变化与人类心理过程的交互等。参与ABMind运营工作，已在学术期刊发表论文10余篇。'
+    expertise: ['Environmental Sociology', 'Social Simulation', 'Climate Change', 'Psychology']
+    links:
+      homepage: 'https://hubo-home.com'
+      github: 'https://github.com/brysonhu1202'
+
+  - id: 'boyu-wang'
+    name: 'Boyu Wang'
+    title: '博士生'
+    affiliation: '美国布法罗大学'
+    bio: '前新加坡惠与（HPE）亚太创新中心数据科学家；前TUMCREATE和新加坡-麻省理工学院研究与技术联盟（SMART）中心研发工程师。Mesa团队核心开发成员，开源软件Mesa-Geo的主要开发者。Mesa GSoC 2024 & 2025导师，GSoC 2025 Mesa-LLM项目主要导师。'
+    expertise: ['Mesa Framework', 'Mesa-Geo', 'Data Science', 'Software Engineering']
+    links:
+      homepage: 'https://wang-boyu.github.io'
+      github: 'https://github.com/wang-boyu'
+
+  - id: 'adam-zhou'
+    name: 'Adam Zhou'
+    title: '博士生'
+    affiliation: '伦敦大学学院'
+    bio: '研究方向为空间隔离建模，致力于使用计算模型来分析和理解城市中的社会空间结构。'
+    expertise: ['Spatial Segregation', 'Urban Modeling', 'Computational Social Science']
+    links:
+      github: 'https://github.com/AdamZh0u'

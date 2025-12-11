@@ -1,0 +1,67 @@
+id: 'mesa-3-guide-2025'
+title: 'Mesa 3.0：Python Agent-Based Modeling 新手指南'
+type: 'guide'
+year: 2025
+difficulty: 'beginner'
+tags: ['Mesa 3.0', 'Python', 'ABM', 'Tutorial', 'Chinese']
+instructors: ['Shuang Song', 'Bo Hu']
+language: 'zh'
+summary: 'Mesa 3.0框架全面指南，涵盖建模、分析、可视化三大核心功能模块'
+sessions:
+  - id: 'mesa3-intro'
+    title: 'Mesa 3.0 核心功能简述'
+    objectives:
+      - '了解Mesa 3.0的模块化设计思路'
+      - '掌握建模-分析-可视化完整流程'
+      - '理解AgentSet和SolaraViz新特性'
+    materials:
+      slides: 'https://paperbell.cn/mesa3-intro'
+      code_repo: 'https://github.com/SongshGeoLab/mesa-examples'
+      references:
+        - title: 'Mesa 3.0 Getting Started Guide'
+          url: 'https://mesa.readthedocs.io/stable/getting_started.html'
+          type: 'docs'
+        - title: 'Mesa Introductory Tutorial'
+          url: 'https://mesa.readthedocs.io/stable/tutorials/intro_tutorial.html'
+          type: 'tutorial'
+  - id: 'mesa3-modeling'
+    title: '建模（Modeling）模块详解'
+    objectives:
+      - '掌握Model和Agent基类的使用'
+      - '理解Space空间管理机制'
+      - '学习AgentSet批量操作功能'
+    materials:
+      code_repo: 'https://github.com/peter-kinger/mesa-modeling-examples'
+      references:
+        - title: 'Mesa-Geo Tutorial'
+          url: 'https://mesa-geo.readthedocs.io/stable/tutorials/intro_tutorial.html'
+          type: 'tutorial'
+  - id: 'mesa3-analysis'
+    title: '分析（Analysis）模块应用'
+    objectives:
+      - '使用DataCollector进行数据收集'
+      - '掌握BatchRunner批量实验'
+      - '学习pandas DataFrame数据分析'
+    materials:
+      code_repo: 'https://github.com/GuojialeGeographer/mesa-analysis'
+      references:
+        - title: 'Mesa Core Examples'
+          url: 'https://mesa.readthedocs.io/stable/examples.html'
+          type: 'docs'
+  - id: 'mesa3-visualization'
+    title: '可视化（Visualization）新特性'
+    objectives:
+      - '掌握SolaraViz浏览器可视化'
+      - '创建交互式模型界面'
+      - '实现自定义可视化组件'
+    materials:
+      code_repo: 'https://github.com/wang-boyu/mesa-visualization'
+      references:
+        - title: 'Mesa Visualization Tutorial'
+          url: 'https://mesa.readthedocs.io/stable/tutorials/visualization_tutorial.html'
+          type: 'tutorial'
+external_links:
+  course_page: 'https://paperbell.cn/'
+  materials_repo: 'https://github.com/projectmesa/mesa-examples'
+  community: 'https://github.com/projectmesa/mesa/discussions'
+last_updated: '2025-02-18'

@@ -1,0 +1,57 @@
+id: 'urban-modeling-2023'
+title: 'Urban Systems Agent-Based Modeling'
+type: 'course'
+year: 2023
+difficulty: 'advanced'
+tags: ['Urban Planning', 'Transportation', 'GIS', 'Spatial Analysis']
+instructors: ['Jiale Guo', 'Adam Zhou']
+language: 'en'
+summary: 'Application of agent-based modeling to urban systems, transportation networks, and spatial planning'
+sessions:
+  - id: 'urban-1'
+    title: 'Urban Systems and Complexity'
+    objectives:
+      - 'Understand urban systems as complex adaptive systems'
+      - 'Identify key agents in urban environments'
+      - 'Model spatial interactions'
+    materials:
+      slides: 'https://guojialegeographer.github.io/index.html'
+      code_repo: 'https://github.com/GuojialeGeographer'
+      references:
+        - title: 'Mesa-Geo Extension'
+          url: 'https://github.com/projectmesa/mesa-geo'
+          type: 'docs'
+        - title: 'Mesa-Geo Tutorial'
+          url: 'https://mesa-geo.readthedocs.io/stable/tutorials/intro_tutorial.html'
+          type: 'tutorial'
+  - id: 'urban-2'
+    title: 'Transportation Network Modeling'
+    objectives:
+      - 'Model traffic flow using agent-based approaches'
+      - 'Integrate GIS data with ABM'
+      - 'Analyze transportation policies'
+    materials:
+      slides: 'https://github.com/AdamZh0u'
+      code_repo: 'https://github.com/AdamZh0u'
+      recording: 'https://gisphere.info/school'
+      references:
+        - title: 'GISphere GIS-info-LLM'
+          url: 'https://gisphere.info/school'
+          type: 'tutorial'
+  - id: 'urban-3'
+    title: 'Policy Analysis and Scenario Testing'
+    objectives:
+      - 'Design policy scenarios in ABM'
+      - 'Validate model outputs against real data'
+      - 'Communicate results to stakeholders'
+    materials:
+      slides: 'https://guojialegeographer.github.io/index.html'
+      code_repo: 'https://github.com/GuojialeGeographer'
+      references:
+        - title: 'Mesa Examples'
+          url: 'https://mesa.readthedocs.io/stable/examples.html'
+          type: 'docs'
+external_links:
+  course_page: 'https://gisphere.info/school'
+  materials_repo: 'https://github.com/projectmesa/mesa-geo'
+last_updated: '2023-11-15'

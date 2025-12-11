@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans), var(--font-noto-sans-sc);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-noto-serif-sc);
+  --font-chinese: var(--font-noto-sans-sc);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,66 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), var(--font-noto-sans-sc), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  /* Chinese text optimization */
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Better text spacing for mixed Chinese/English content */
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+}
+
+/* Chinese text specific optimizations */
+.chinese-text {
+  font-family: var(--font-noto-sans-sc), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Mixed content optimization */
+.mixed-content {
+  font-family: var(--font-geist-sans), var(--font-noto-sans-sc), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+}
+
+/* Code blocks with Chinese comments */
+.code-chinese {
+  font-family: var(--font-geist-mono), 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-feature-settings: "liga" 0;
+}
+
+/* Headings optimization for Chinese */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-geist-sans), var(--font-noto-sans-sc), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Improve readability for Chinese text */
+p, li, td, th {
+  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Optimize for different screen densities */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Print optimization for Chinese content */
+@media print {
+  body {
+    font-family: 'Times New Roman', var(--font-noto-serif-sc), serif;
+    line-height: 1.6;
+  }
 }

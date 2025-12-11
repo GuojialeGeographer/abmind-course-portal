@@ -1,0 +1,44 @@
+id: 'mesa-workshop-2024'
+title: 'Mesa Framework Advanced Workshop'
+type: 'workshop'
+year: 2024
+difficulty: 'intermediate'
+tags: ['Mesa', 'Python', 'Advanced', 'Visualization']
+instructors: ['Boyu Wang', 'Xin Lin']
+language: 'zh'
+summary: 'Advanced Mesa framework techniques including visualization, data collection, and complex agent behaviors'
+sessions:
+  - id: 'workshop-1'
+    title: '高级智能体行为建模'
+    objectives:
+      - '实现复杂智能体决策机制'
+      - '处理智能体间的复杂交互'
+      - '优化模型性能'
+    materials:
+      slides: 'https://wang-boyu.github.io'
+      code_repo: 'https://github.com/wang-boyu'
+      recording: 'https://www.complexityexplorer.org/courses/172-agent-based-models-with-python-an-introduction-to-mesa'
+      references:
+        - title: 'Mesa GitHub Discussions'
+          url: 'https://github.com/projectmesa/mesa/discussions'
+          type: 'docs'
+        - title: 'Mesa Documentation'
+          url: 'https://mesa.readthedocs.io/'
+          type: 'docs'
+  - id: 'workshop-2'
+    title: '数据收集与可视化'
+    objectives:
+      - '设计有效的数据收集策略'
+      - '创建交互式可视化界面'
+      - '分析模拟结果'
+    materials:
+      slides: 'https://github.com/peter-kinger'
+      code_repo: 'https://github.com/peter-kinger'
+      references:
+        - title: 'Mesa Visualization Tutorial'
+          url: 'https://mesa.readthedocs.io/stable/tutorials/visualization_tutorial.html'
+          type: 'tutorial'
+external_links:
+  course_page: 'https://github.com/projectmesa/mesa'
+  materials_repo: 'https://github.com/projectmesa/mesa-examples'
+last_updated: '2024-12-10'

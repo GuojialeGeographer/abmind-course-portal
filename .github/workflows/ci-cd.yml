@@ -1,0 +1,189 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '8'
+
+jobs:
+  # Content validation and linting
+  validate:
+    name: Validate Content & Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./abmind-course-portal
+
+      - name: Type check
+        run: npm run type-check
+        working-directory: ./abmind-course-portal
+
+      - name: Lint code
+        run: npm run lint
+        working-directory: ./abmind-course-portal
+
+      - name: Check code formatting
+        run: npm run format:check
+        working-directory: ./abmind-course-portal
+
+      - name: Validate YAML schemas and content
+        run: npm run validate:content
+        working-directory: ./abmind-course-portal
+
+      - name: Check content quality
+        run: npm run validate:quality
+        working-directory: ./abmind-course-portal
+
+  # Run tests
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./abmind-course-portal
+
+      - name: Run unit tests
+        run: npm run test
+        working-directory: ./abmind-course-portal
+
+      - name: Run accessibility tests
+        run: npm run validate:accessibility
+        working-directory: ./abmind-course-portal
+
+  # Build application
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    needs: [validate, test]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./abmind-course-portal
+
+      - name: Build application
+        run: npm run build
+        working-directory: ./abmind-course-portal
+        env:
+          NODE_ENV: production
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-files
+          path: abmind-course-portal/out/
+          retention-days: 7
+
+  # Deploy to Vercel (production)
+  deploy-vercel:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./abmind-course-portal
+          vercel-args: '--prod'
+
+  # Deploy to GitHub Pages (backup)
+  deploy-github-pages:
+    name: Deploy to GitHub Pages (Backup)
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: github-pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./abmind-course-portal
+
+      - name: Build for GitHub Pages
+        run: npm run build
+        working-directory: ./abmind-course-portal
+        env:
+          NODE_ENV: production
+          NEXT_PUBLIC_BASE_PATH: /abmind-course-portal
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: abmind-course-portal/out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Notify on failure
+  notify-failure:
+    name: Notify Build Failure
+    runs-on: ubuntu-latest
+    needs: [validate, test, build, deploy-vercel, deploy-github-pages]
+    if: failure()
+    steps:
+      - name: Send notification
+        run: |
+          echo "Build failed for commit ${{ github.sha }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          # In a real setup, this would send notifications via email, Slack, etc.
+          # For now, we'll just log the failure information

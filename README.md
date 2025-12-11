@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ABMind Course Portal
+
+A lightweight, scalable official website for the ABMind Chinese Community that serves as a unified entry point for Agent-Based Modeling (ABM) courses and resources.
+
+## Features
+
+- 📚 **Course Catalog**: Structured display of ABM courses and workshops
+- 🛤️ **Learning Paths**: Curated sequences for systematic ABM learning
+- 🔗 **Resource Index**: External links to educational materials and tools
+- 🌐 **Chinese Optimization**: Optimized fonts and rendering for Chinese content
+- 📱 **Responsive Design**: Mobile-first design with accessibility features
+- ⚡ **Static Generation**: Fast loading with Next.js static site generation
+- 🔍 **Search & Filter**: Real-time search and filtering capabilities
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ with App Router
+- **Language**: TypeScript with strict mode
+- **Styling**: Tailwind CSS with Chinese font optimization
+- **Content**: YAML-based data management with Zod validation
+- **Deployment**: Vercel with GitHub Actions CI/CD
+
+## Project Structure
+
+```
+abmind-course-portal/
+├── data/                    # YAML data files
+│   ├── courses/            # Course definitions
+│   ├── learning_paths/     # Learning path configurations
+│   ├── resources/          # External resource links
+│   └── site_config.yaml    # Site configuration
+├── src/
+│   ├── app/               # Next.js App Router pages
+│   ├── components/        # React components
+│   ├── lib/              # Utility functions and data loading
+│   └── types/            # TypeScript type definitions
+└── public/               # Static assets
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd abmind-course-portal
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Development Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run type-check` - Run TypeScript type checking
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding Courses
 
-## Deploy on Vercel
+Create a new YAML file in `data/courses/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```yaml
+id: "course-id"
+title: "Course Title"
+type: "course"
+year: 2024
+difficulty: "beginner"
+tags: ["ABM", "Mesa"]
+instructors: ["Instructor Name"]
+language: "zh"
+summary: "Course description"
+sessions:
+  - id: "session-1"
+    title: "Session Title"
+    objectives: ["Learning objective"]
+    materials:
+      slides: "https://example.com/slides.pdf"
+      code_repo: "https://github.com/example/repo"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Configuration
+
+Edit `data/site_config.yaml` to update:
+- Site information and metadata
+- Navigation structure
+- Featured courses
+- Social links and announcements
+
+## Deployment
+
+The project is configured for automatic deployment:
+
+1. **Vercel**: Primary deployment platform
+2. **GitHub Actions**: CI/CD pipeline for automated builds
+3. **GitHub Pages**: Backup deployment option
+
+### Environment Setup
+
+1. Connect your repository to Vercel
+2. Configure build settings:
+   - Build Command: `npm run build`
+   - Output Directory: `out` (for static export)
+3. Set up GitHub Actions for automated deployments
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting: `npm run lint && npm run type-check`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.

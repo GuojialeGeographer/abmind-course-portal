@@ -1,0 +1,58 @@
+name: Deploy ABMind Course Portal
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'abmind-course-portal/package-lock.json'
+        
+    - name: Install dependencies
+      run: |
+        cd abmind-course-portal
+        npm ci
+        
+    - name: Run tests
+      run: |
+        cd abmind-course-portal
+        npm run test
+        
+    - name: Run linting
+      run: |
+        cd abmind-course-portal
+        npm run lint
+        
+    - name: Type check
+      run: |
+        cd abmind-course-portal
+        npm run type-check
+        
+    - name: Build application
+      run: |
+        cd abmind-course-portal
+        npm run build
+      env:
+        NEXT_PUBLIC_BASE_PATH: /abmind-course-portal
+        NODE_ENV: production
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./abmind-course-portal/out
+        cname: abmind.org  # 如果有自定义域名，取消注释并修改

@@ -1,0 +1,39 @@
+id: 'abm-basics-2024'
+title: 'Agent-Based Modeling Basics'
+type: 'course'
+year: 2024
+difficulty: 'beginner'
+tags: ['ABM', 'Mesa', 'Python', 'Modeling']
+instructors: ['Shuang Song', 'Boyu Wang']
+language: 'zh'
+summary: 'Introduction to Agent-Based Modeling concepts and Mesa framework implementation'
+sessions:
+  - id: 'session-1'
+    title: 'ABM概念与应用'
+    objectives:
+      - '理解智能体建模的基本概念'
+      - '了解ABM在社会科学中的应用'
+    materials:
+      slides: 'https://www.gea.mpg.de/person/137764'
+      code_repo: 'https://github.com/SongshGeoLab'
+      references:
+        - title: 'Mesa Documentation'
+          url: 'http://mesa.readthedocs.org/'
+          type: 'docs'
+  - id: 'session-2'
+    title: 'Mesa框架入门'
+    objectives:
+      - '安装和配置Mesa环境'
+      - '创建第一个Mesa模型'
+    materials:
+      slides: 'https://wang-boyu.github.io'
+      code_repo: 'https://github.com/wang-boyu'
+      recording: 'https://www.complexityexplorer.org/courses/172-agent-based-models-with-python-an-introduction-to-mesa'
+      references:
+        - title: 'Mesa Intro Tutorial'
+          url: 'http://mesa.readthedocs.org/en/stable/tutorials/intro_tutorial.html'
+          type: 'tutorial'
+external_links:
+  course_page: 'https://paperbell.cn/'
+  materials_repo: 'https://github.com/projectmesa/mesa-examples'
+last_updated: '2024-12-11'

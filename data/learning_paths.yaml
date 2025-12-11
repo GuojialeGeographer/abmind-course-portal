@@ -1,0 +1,85 @@
+- id: 'abm-from-zero'
+  title: 'ABM从零开始'
+  description: '为完全初学者设计的系统性ABM学习路径，从基础概念到实际应用'
+  recommended_audience: '对ABM感兴趣的初学者，具备基础Python编程能力'
+  estimated_duration: '8-12周'
+  steps:
+    - order: 1
+      type: 'course'
+      course_id: 'mesa-3-guide-2025'
+      note: '学习Mesa 3.0框架核心功能和新特性'
+      optional: false
+    - order: 2
+      type: 'practice'
+      note: '完成简单的Schelling模型实现练习'
+      optional: false
+    - order: 3
+      type: 'course'
+      course_id: 'abm-basics-2024'
+      note: '巩固ABM基础概念和实践技能'
+      optional: false
+    - order: 4
+      type: 'practice'
+      note: '独立完成一个中等复杂度的ABM项目'
+      optional: true
+
+- id: 'urban-specialist'
+  title: 'Urban ABM Specialist Path'
+  description: 'Specialized learning path for urban planning and transportation modeling applications'
+  recommended_audience: 'Urban planners, transportation engineers, or researchers with ABM basics'
+  estimated_duration: '6-8 weeks'
+  steps:
+    - order: 1
+      type: 'course'
+      course_id: 'abm-basics-2024'
+      note: 'Foundation in ABM concepts (can be skipped if already familiar)'
+      optional: true
+    - order: 2
+      type: 'resource'
+      resource_id: 'gis-abm-integration'
+      note: 'Learn GIS integration techniques'
+      optional: false
+    - order: 3
+      type: 'course'
+      course_id: 'urban-modeling-2023'
+      note: 'Core urban systems modeling course'
+      optional: false
+    - order: 4
+      type: 'practice'
+      note: 'Develop a city-specific transportation model'
+      optional: false
+
+- id: 'research-track'
+  title: '科研导向学习路径'
+  description: '面向学术研究的深度ABM学习路径，包含理论基础和前沿方法'
+  recommended_audience: '研究生、博士生或从事ABM相关研究的学者'
+  estimated_duration: '12-16周'
+  steps:
+    - order: 1
+      type: 'course'
+      course_id: 'abm-basics-2024'
+      note: '建立扎实的理论基础'
+      optional: false
+    - order: 2
+      type: 'resource'
+      resource_id: 'abm-theory-papers'
+      note: '阅读核心理论文献'
+      optional: false
+    - order: 3
+      type: 'course'
+      course_id: 'mesa-workshop-2024'
+      note: '掌握高级建模技术'
+      optional: false
+    - order: 4
+      type: 'course'
+      course_id: 'urban-modeling-2023'
+      note: '学习应用领域案例'
+      optional: false
+    - order: 5
+      type: 'practice'
+      note: '完成原创性研究项目'
+      optional: false
+    - order: 6
+      type: 'practice'
+      note: '撰写学术论文或会议报告'
+      optional: true

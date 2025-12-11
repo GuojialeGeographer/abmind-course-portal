@@ -1,0 +1,89 @@
+- id: 'mesa-documentation'
+  title: 'Mesa Official Documentation'
+  type: 'docs'
+  url: 'http://mesa.readthedocs.org/'
+  tags: ['Mesa', 'Documentation', 'Python', 'Tutorial']
+  description: 'Comprehensive official documentation for the Mesa agent-based modeling framework'
+  language: 'en'
+  difficulty: 'beginner'
+
+- id: 'mesa-intro-tutorial'
+  title: 'Mesa 入门教程'
+  type: 'tutorial'
+  url: 'http://mesa.readthedocs.org/en/stable/tutorials/intro_tutorial.html'
+  tags: ['Mesa', 'Tutorial', 'Beginner', 'Python']
+  description: 'Mesa框架官方入门教程，适合初学者学习ABM基础概念和实践'
+  language: 'en'
+  difficulty: 'beginner'
+
+- id: 'mesa-visualization-tutorial'
+  title: 'Mesa 可视化教程'
+  type: 'tutorial'
+  url: 'https://mesa.readthedocs.io/stable/tutorials/visualization_tutorial.html'
+  tags: ['Mesa', 'Visualization', 'Tutorial', 'SolaraViz']
+  description: 'Mesa框架可视化功能详细教程，学习如何创建交互式模型可视化'
+  language: 'en'
+  difficulty: 'intermediate'
+
+- id: 'netlogo-models-library'
+  title: 'NetLogo Models Library'
+  type: 'tool'
+  url: 'https://ccl.northwestern.edu/netlogo/models/'
+  tags: ['NetLogo', 'Models', 'Examples', 'Library']
+  description: 'Extensive collection of pre-built agent-based models in NetLogo for learning and reference'
+  language: 'en'
+  difficulty: 'beginner'
+
+- id: 'urban-data-portal'
+  title: '城市数据开放平台'
+  type: 'dataset'
+  url: 'https://example.com/data/urban'
+  tags: ['Urban', 'Data', 'Open Source', 'China']
+  description: '中国主要城市的开放数据平台，提供人口、交通、经济等多维度数据'
+  language: 'zh'
+  difficulty: 'intermediate'
+
+- id: 'complexity-science-book'
+  title: 'Introduction to Complexity Science'
+  type: 'book'
+  url: 'https://example.com/book/complexity'
+  tags: ['Complexity', 'Theory', 'Systems', 'Science']
+  description: 'Foundational textbook covering complexity science principles relevant to agent-based modeling'
+  language: 'en'
+  difficulty: 'intermediate'
+
+- id: 'mesa-geo-extension'
+  title: 'Mesa-Geo Spatial Extension'
+  type: 'tool'
+  url: 'https://github.com/projectmesa/mesa-geo'
+  tags: ['Mesa', 'Spatial', 'GIS', 'Extension']
+  description: 'Extension for Mesa that adds spatial capabilities and GIS integration'
+  language: 'en'
+  difficulty: 'intermediate'
+
+- id: 'mesa-github-discussions'
+  title: 'Mesa GitHub 讨论区'
+  type: 'docs'
+  url: 'https://github.com/projectmesa/mesa/discussions'
+  tags: ['Mesa', 'Community', 'Support', 'GitHub']
+  description: 'Mesa项目官方GitHub讨论区，获取技术支持和参与社区交流'
+  language: 'en'
+  difficulty: 'beginner'
+
+- id: 'gsoc-mesa-projects'
+  title: 'GSoC Mesa 项目'
+  type: 'tutorial'
+  url: 'https://github.com/gsoc-cn/gsoc-cn'
+  tags: ['GSoC', 'Mesa', 'Open Source', 'Mentorship']
+  description: 'Google Summer of Code中Mesa相关项目，包含Mesa-LLM等创新项目'
+  language: 'zh'
+  difficulty: 'advanced'
+
+- id: 'complexity-explorer-course'
+  title: 'Agent-Based Models with Python在线课程'
+  type: 'tutorial'
+  url: 'https://www.complexityexplorer.org/courses/172-agent-based-models-with-python-an-introduction-to-mesa'
+  tags: ['Mesa', 'Python', 'Online Course', 'Complexity']
+  description: 'Santa Fe Institute提供的Mesa框架在线公开课程'
+  language: 'en'
+  difficulty: 'intermediate'
